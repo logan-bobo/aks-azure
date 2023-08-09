@@ -11,14 +11,15 @@ provider "azurerm" {
   features {}
 }
 
-resource "azurerm_resource_group" "main" {
-  name     = "aks"
-  location = local.location
-}
-
 locals {
   location = "uksouth"
   tags = {
     environment = "learn-eks"
   }
+}
+
+resource "azurerm_resource_group" "main" {
+  name     = "aks"
+  location = local.location
+  tags = local.tags
 }
