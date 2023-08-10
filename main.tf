@@ -1,7 +1,7 @@
 terraform {
   required_providers {
     azurerm = {
-      source = "hashicorp/azurerm"
+      source  = "hashicorp/azurerm"
       version = "3.68.0"
     }
   }
@@ -21,5 +21,5 @@ locals {
 resource "azurerm_resource_group" "main" {
   name     = "aks"
   location = local.location
-  tags = local.tags
+  tags     = local.tags
 }
